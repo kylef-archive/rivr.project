@@ -14,3 +14,7 @@ elif settings.TEMPLATE_ENGINE == 'jinja2':
     view = JinjaMiddleware(template_dir, view)
 
 app = WSGIHandler(view)
+
+if __name__ == '__main__':
+    from rivr import serve
+    serve(view)
